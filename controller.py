@@ -4,10 +4,11 @@ from model import Converter
 from view import ConverterView
 import tkinter as tk
 
+
 class Controller():
-    
+
     def __init__(self):
-        self.model = model 
+        self.model = model
         self.view = view
 
     def upload(self):
@@ -23,9 +24,10 @@ class Controller():
         self.view.plotWave(self.model.fig)
 
     def run(self):
-      self.view.run()
+        self.view.run()
 
-root =tk.Tk()
+
+root = tk.Tk()
 model = Converter()
 view = ConverterView(Controller, model)
 controller = Controller(model, view)
@@ -34,7 +36,6 @@ view.grid(row=0, column=0)
 
 root.mainloop()
 
-
 if __name__ == "__main__":
-  controller = Controller()
-  controller.run()
+    controller = Controller()
+    controller.run()

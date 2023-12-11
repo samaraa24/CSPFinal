@@ -7,7 +7,6 @@ from tkinter import filedialog as fd
 
 class Converter:
 
-  #converting audio, using any inputed file to .wav
   @staticmethod
   def convert_audio(src, dist):
     sound = AudioSegment.from_mp3(src)
@@ -40,9 +39,8 @@ def plot_waveform(input_file):
       plt.plot(samples)
       plt.title(f'Waveform Plot {i}')
 
-  plt.show() 
+  plt.show()
 
-#calculates rt60 of inputed file 
 def calculate_rt60(input_file):
   audio = AudioSegment.from_file(input_file, format="mp4")
   low, mid, high = audio.dBFS - 10, audio.dBFS, audio.dBFS + 10
@@ -51,7 +49,6 @@ def calculate_rt60(input_file):
   rt60_high = audio.roughness(rt60_high=high)
   return rt60_low, rt60_mid, rt60_high
 
-#makes spectrogram of calculations
 def plot_spectrogram(input_file):
   audio = AudioSegment.from_file(input_file, format="mp4")
   plt.figure(figsize=(8, 6))
@@ -59,7 +56,6 @@ def plot_spectrogram(input_file):
   plt.title('Spectrogram')
   plt.show()
 
-#output of data
 def text_output(input_file):
   audio = AudioSegment.from_file(input_file, format="mp4")
 

@@ -8,6 +8,7 @@ from scipy.io import wavfile
 import matplotlib.pyplot as plt
 from model import Converter
 
+
 class ConverterView(tk.Tk):
     def __init__(self, controller, model):
         self.controller = controller
@@ -46,7 +47,7 @@ class ConverterView(tk.Tk):
         self.plot_spectrogram(input_file)
         self.display_text_output(input_file)
         self.calculate_rt60(input_file)  # Passing the input_file argument
-      
+
     def plot_waveform(self, input_file):
         audio = AudioSegment.from_file(input_file, format="wav")
         samples = np.array(audio.get_array_of_samples())
@@ -97,8 +98,8 @@ class ConverterView(tk.Tk):
 
 
 
-  
-  
-    
-    
+
+
+
+
 
