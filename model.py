@@ -1,8 +1,9 @@
-import os
+import os, io
 import numpy as np
 from pydub import AudioSegment
 import matplotlib.pyplot as plt
-
+from tkinter import filedialog as fd
+# import sox as sox
 
 class Converter:
 
@@ -38,7 +39,7 @@ def plot_waveform(input_file):
       plt.plot(samples)
       plt.title(f'Waveform Plot {i}')
 
-  plt.show() 
+  plt.show()
 
 def calculate_rt60(input_file):
   audio = AudioSegment.from_file(input_file, format="mp4")
